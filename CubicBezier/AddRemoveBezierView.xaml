@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="DrawBezier.AddRemoveBezierView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DrawBezier">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left"
+                    Margin="0,10,0,0">
+            <Label Content="BezierResolution:"/>
+            <ComboBox ItemsSource="{Binding BezierResolutionList}"
+                      SelectedItem="{Binding BezierResolution}"
+                      Width="200"/>
+        </StackPanel>
+
+        <Separator Margin="0,10"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left"
+                    Margin="0,10,0,0">
+            <Label Content="Number of Control Points:"/>
+            <ComboBox ItemsSource="{Binding ControlPointsCountList}"
+                      SelectedItem="{Binding NumberOfControlPoints}"
+                      Width="200"/>
+        </StackPanel>
+        
+        <ItemsControl ItemsSource="{Binding ControlPoints}"
+                      Margin="0,10,0,0">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBox Text="{Binding Path=X, Mode=TwoWay,
+                            UpdateSourceTrigger=PropertyChanged, 
+                            diag:PresentationTraceSources.TraceLevel=High}"
+                                 Width="100"/>
+                        <TextBox Text="{Binding Path=Y, Mode=TwoWay,
+                            UpdateSourceTrigger=PropertyChanged, 
+                            diag:PresentationTraceSources.TraceLevel=High}"
+                                 Width="100"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            
+        </ItemsControl>
+
+        <StackPanel Orientation="Vertical"
+                    Margin="0,10,0,0">
+            <Button Content="Add" Command="{Binding AddCommand}"/>
+        </StackPanel>
+        
+        <Separator Margin="0,10"/>
+        
+        <StackPanel>
+            <ListBox ItemsSource="{Binding BezierModel.Beziers}" SelectedItem="{Binding SelectedBezier}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Order: "/>
+                            <TextBlock Text="{Binding ControlPoints.Length}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical"
+                    Margin="0,10,0,0">
+            <Button Content="Remove" Command="{Binding RemoveCommand}"/>
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>

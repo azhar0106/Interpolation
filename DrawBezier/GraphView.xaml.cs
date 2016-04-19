@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace DrawBezier
 {
@@ -34,9 +35,9 @@ namespace DrawBezier
             BezierModel = (Application.Current as App).BezierModel;
             GraphViewModel = new GraphViewModel();
             this.DataContext = GraphViewModel;
-            GraphViewModel.BezierViewModels.CollectionChanged += BezierViewModels_CollectionChanged;
-            DrawingCanvas.SizeChanged += DrawingCanvas_SizeChanged;
             
+            WeakEventManager<ObservableCollection<BezierViewModel>, NotifyCollectionChangedEventArgs>.AddHandler(GraphViewModel.BezierViewModels, "CollectionChanged", BezierViewModels_CollectionChanged);
+            DrawingCanvas.SizeChanged += DrawingCanvas_SizeChanged;
         }
 
         
@@ -55,14 +56,14 @@ namespace DrawBezier
             if(e.Action == NotifyCollectionChangedAction.Add)
             {
                 BezierViewModel bvm = (BezierViewModel)e.NewItems[0];
-                bvm.PropertyChanged += Bvm_PropertyChanged;
+                WeakEventManager<BezierViewModel, PropertyChangedEventArgs>.AddHandler(bvm, "PropertyChanged", Bvm_PropertyChanged);
                 AddBezier(bvm);
             }
 
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 BezierViewModel bvm = (BezierViewModel)e.OldItems[0];
-                bvm.PropertyChanged -= Bvm_PropertyChanged;
+                WeakEventManager<BezierViewModel, PropertyChangedEventArgs>.RemoveHandler(bvm, "PropertyChanged", Bvm_PropertyChanged);
                 RemoveBezier(bvm);
             }
         }

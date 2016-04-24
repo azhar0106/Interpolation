@@ -1,0 +1,14 @@
+﻿<Application x:Class="CartesianDraw.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CartesianDraw"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="BorderSeparatorStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="0,10"/>
+        </Style>
+    </Application.Resources>
+</Application>

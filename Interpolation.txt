@@ -1,0 +1,28 @@
+Project Ideas:
+
+// Cartesian Draw
+- Create a Cartesian Panel
+- Create user control for each Primitive at places itself correctly on Cartesian Panel
+- MVVM
+ - Model Class for each primitive
+
+
+
+// Bezier Analysis
+1. select bezier order
+2. enter control points
+3. number of t values
+4. enter t values
+5. display x and y values for t values
+
+
+// Interpolation Infrastructure
+- Signal Processor
+ - Pipeline
+  - Generator
+  - Editor
+  - Viewer
+- IPipelineEntity
+ - GetNextValues
+ - Configure
+

@@ -60,6 +60,7 @@
     <Compile Include="View\CartesianCanvasView.xaml.cs">
       <DependentUpon>CartesianCanvasView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewBehaviors.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

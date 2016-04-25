@@ -5,39 +5,46 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CartesianDraw.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+             d:DesignHeight="300">
+    <Border Style="{StaticResource BorderSurroundControlStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             
-            <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
 
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
 
-            <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
 
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
 
-        </Grid.RowDefinitions>
-        <Label Content="Primitive Type:" Grid.Row="0"/>
-        <ComboBox Grid.Row="1">
-            <ComboBox.Items>
-                <ComboBoxItem Content="Point"/>
-                <ComboBoxItem Content="Line"/>
-            </ComboBox.Items>
-        </ComboBox>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Primitive Type:" Grid.Row="0"
+                       Style="{StaticResource LabelStyle}"/>
+            <ComboBox Grid.Row="1"
+                      Style="{StaticResource ComboBoxStyle}">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="Point"/>
+                    <ComboBoxItem Content="Line"/>
+                </ComboBox.Items>
+            </ComboBox>
 
-        <Border Grid.Row="2" Style="{StaticResource BorderSeparatorStyle}"/>
+            <Border Grid.Row="2" Style="{StaticResource BorderSeparatorStyle}"/>
 
-        <Label Content="Parameters" Grid.Row="3"/>
+            <TextBlock Text="Parameters:" Grid.Row="3"
+                       Style="{StaticResource LabelStyle}"/>
 
-        <Border Grid.Row="5" Style="{StaticResource BorderSeparatorStyle}"/>
+            <Border Grid.Row="5" Style="{StaticResource BorderSeparatorStyle}"/>
 
-        <Button Content="Add Primitive" Grid.Row="6"/>
-        <Button Content="Remove Primitive" Grid.Row="7"/>
+            <Button Content="Add Primitive" Grid.Row="6"
+                    Style="{StaticResource ButtonStyle}"/>
+            <Button Content="Remove Primitive" Grid.Row="7"
+                    Style="{StaticResource ButtonStyle}"/>
         
-    </Grid>
+        </Grid>
+    </Border>
 </UserControl>

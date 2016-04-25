@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CartesianDraw.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="300" d:DesignWidth="300"
+             MinWidth="400" MinHeight="300">
+    <Border Style="{StaticResource BorderSurroundControlStyle}">
+        <Grid>
+        </Grid>
+    </Border>
 </UserControl>

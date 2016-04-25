@@ -5,23 +5,23 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <SolidColorBrush x:Key="BorderColor" Color="LightGray"/>
-        <Thickness x:Key="ControlMargin" Left="10" Right="10" Top="5" Bottom="5"/>
+        <Thickness x:Key="ControlMargin" Left="5" Right="5" Top="5" Bottom="5"/>
 
         <Style x:Key="BorderSeparatorStyle" TargetType="Border">
             <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
             <Setter Property="Background" Value="{StaticResource BorderColor}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="Margin" Value="-5,5"/>
         </Style>
         <Style x:Key="BorderSurroundControlStyle" TargetType="Border">
             <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
-            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="Padding" Value="0,10"/>
+            <Setter Property="Padding" Value="5"/>
         </Style>
         <Style x:Key="BorderSurroundWindowStyle" TargetType="Border">
             <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
-            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Margin" Value="0"/>
             <Setter Property="Padding" Value="5"/>
         </Style>
@@ -30,6 +30,9 @@
             <Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
         </Style>
         <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
+        </Style>
+        <Style x:Key="ListBoxStyle" TargetType="ListBox">
             <Setter Property="Margin" Value="{StaticResource ControlMargin}"/>
         </Style>
         <Style x:Key="ButtonStyle" TargetType="Button">
